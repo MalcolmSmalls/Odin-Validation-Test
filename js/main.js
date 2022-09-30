@@ -21,3 +21,15 @@ country.addEventListener('input', function(e){
         country.reportValidity()
     }
 })
+
+let flakka
+const zip = document.querySelector('#zip')
+zip.addEventListener('input', () => {
+    if(zip.validity.tooLong === true || zip.validity.tooShort === true || isNaN(parseInt(zip.value)) === true){
+        flakka = zip
+        zip.setCustomValidity('Must be a valid zip code')
+        zip.reportValidity()
+    }else{
+        zip.setCustomValidity("")
+    }
+})
