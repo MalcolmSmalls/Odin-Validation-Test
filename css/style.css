@@ -11,7 +11,19 @@
 /* LAYOUT
 /*******************************************/
 
+form{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  width:20%;
+}
+input:invalid{
+  border: 2px solid red;
+}
 
+input:valid{
+  border:2px solid black;
+}
 
 /******************************************
 /* ADDITIONAL STYLES
