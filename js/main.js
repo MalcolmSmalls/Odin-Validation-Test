@@ -42,3 +42,13 @@ password.addEventListener('input', () => {
         password.setCustomValidity("")
     }
 })
+
+const confirmPassword = document.querySelector('#confirm')
+confirmPassword.addEventListener('input', () => {
+    if(confirmPassword.value !== password.value){
+        confirmPassword.setCustomValidity('Must match password!')
+        confirmPassword.reportValidity()
+    }else{
+        confirmPassword.setCustomValidity("")
+    }
+})
