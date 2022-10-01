@@ -22,14 +22,23 @@ country.addEventListener('input', function(e){
     }
 })
 
-let flakka
 const zip = document.querySelector('#zip')
 zip.addEventListener('input', () => {
     if(zip.validity.tooLong === true || zip.validity.tooShort === true || isNaN(parseInt(zip.value)) === true){
-        flakka = zip
         zip.setCustomValidity('Must be a valid zip code')
         zip.reportValidity()
     }else{
         zip.setCustomValidity("")
+    }
+})
+
+const password = document.querySelector('#password')
+password.addEventListener('input', () => {
+    const notSpecial = /[^A-Za-z 0-9]/g
+    if(password.validity.tooLong === true || password.validity.tooShort === true || notSpecial.test(password.value) === false ){
+        password.setCustomValidity('Must be 6-10 characters and contain a special character')
+        password.reportValidity()
+    }else{
+        password.setCustomValidity("")
     }
 })
