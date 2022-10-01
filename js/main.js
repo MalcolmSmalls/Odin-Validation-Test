@@ -57,10 +57,25 @@ const submitBtn = document.querySelector('button')
 submitBtn.addEventListener('click', () => {
     if(email.value === ""){
         email.setAttribute('required', 'true')
+        if(zip.value === ""){
+            zip.setAttribute('required', 'true')}
+        if(password.value === ""){
+            password.setAttribute('required', 'true')}
+        if(confirmPassword.value === ""){
+            confirmPassword.setAttribute('required', 'true') 
+        }
     }else if(zip.value === ""){
         zip.setAttribute('required', 'true')
+        if(password.value === ""){
+            password.setAttribute('required', 'true')}
+        if(confirmPassword.value === ""){
+            confirmPassword.setAttribute('required', 'true') 
+        }
     }else if(password.value === ""){
         password.setAttribute('required', 'true')
+        if(confirmPassword.value === ""){
+            confirmPassword.setAttribute('required', 'true') 
+        }
     }else if(confirmPassword.value === ""){
         confirmPassword.setAttribute('required', 'true') 
     }
